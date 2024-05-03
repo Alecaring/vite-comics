@@ -44,23 +44,23 @@ export default {
                     linkName: "SHOP",
                     linkDir: "#",
                 }
-            ]
-        }
-        methods: {
-
+            ],
+            logo: "dc-logo",
         }
     },
-
+    methods: {
+        getImagePath(img) {
+            return new URL(`../assets/img/${img}.png`, import.meta.url).href;
+        }
+    }
 }
 
 </script>
 
 <template>
     <header>
-
-
         <div class="firstCont">
-            <img src="../assets/img/dc-logo.png" alt="">
+            <img :src="getImagePath(logo)" alt="">
         </div>
         <div class="SecondContainer">
             <ul>

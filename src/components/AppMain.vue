@@ -5,28 +5,38 @@ export default {
         return {
             elemBlueBand: [
                 {
-                    img: "digital-comics",
+                    img: "buy-comics-digital-comics",
                     title: "DIGITAL COMICS",
+                    link: "#",
                 },
                 {
-                    img: "merchandise",
+                    img: "buy-comics-merchandise",
                     title: "DC MERCHANDISE",
+                    link: "#",
                 },
                 {
-                    img: "subscriptions",
+                    img: "buy-comics-subscriptions",
                     title: "SUBSCRIPTION",
+                    link: "#",
                 },
                 {
-                    img: "shop-locator",
+                    img: "buy-comics-shop-locator",
                     title: "COMIC SHOP LOCATOR",
+                    link: "#",
                 },
                 {
-                    img: "subscriptions",
+                    img: "buy-dc-power-visa",
                     title: "DC POWER VISA",
+                    link: "#",
                 }
             ]
         }
     },
+    methods: {
+        getImagePath(img) {
+            return new URL(`../assets/img/${img}.png`, import.meta.url).href;
+        }
+    }
 }
 </script>
 
@@ -41,9 +51,10 @@ export default {
         <section class="secondSection">
             <div class="bottomSec">
                 <ul>
-                    <li v-for="elem in elemBlueBand" :key="index"><a href="#">
+                    <li v-for="elem in elemBlueBand" :key="index">
+                        <a :href="elem.link">
                             <span>
-                                <img src="`../assets/img/buy-comics-digital-comics.png`" alt="">
+                                <img :src="getImagePath(elem.img)" :alt="elem.title">
                             </span>
                             <p>
                                 {{ elem.title }}
@@ -103,7 +114,7 @@ main {
 
                         span {
                             img {
-                                width: 2vw;
+                                height: 2vw;
                             }
                         }
 

@@ -1,9 +1,3 @@
-
-<!-- !DA UNSERIRE L'IMMAGINE DEL CONTENITORE DINAMICAMENTE (LEFT) && footer bottom -->
-
-
-
-
 <script>
 export default {
 
@@ -133,10 +127,39 @@ export default {
                     link: "#"
                 },
             ],
+            imgBgBig: "dc-logo-bg",
+            elemsBottomFooter: [
+                {
+                    slogan: "FOLLOW US",
+                    link: "#",
+                },
+                {
+                    link: "#",
+                    linkImg: "footer-facebook",
+                },
+                {
+                    link: "#",
+                    linkImg: "footer-periscope",
+                },
+                {
+                    link: "#",
+                    linkImg: "footer-pinterest",
+                },
+                {
+                    link: "#",
+                    linkImg: "footer-twitter",
+                },
+                {
+                    link: "#",
+                    linkImg: "footer-youtube",
+                },
+            ],
         }
     },
     methods: {
-
+        getImagePath(img) {
+            return new URL(`../assets/img/${img}.png`, import.meta.url).href;
+        }
     }
 }
 </script>
@@ -204,7 +227,7 @@ export default {
 
             </div>
             <div class="secondInnerCont">
-                <img src="../assets/img/dc-logo-bg.png" alt="">
+                <img :src="getImagePath(imgBgBig)" alt="">
             </div>
         </div>
 
@@ -214,24 +237,20 @@ export default {
                     <a href="#">SIGN-UP NOW!</a>
                 </span>
                 <ul>
-                    <li><a href="#">
-                            <h4>FOLLOW US</h4>
-                        </a></li>
-                    <li><a href="#">
-                            <span><img src="../assets/img/footer-facebook.png" alt=""></span>
-                        </a></li>
-                    <li><a href="#">
-                            <span><img src="../assets/img/footer-periscope.png" alt=""></span>
-                        </a></li>
-                    <li><a href="#">
-                            <span><img src="../assets/img/footer-pinterest.png" alt=""></span>
-                        </a></li>
-                    <li><a href="#">
-                            <span><img src="../assets/img/footer-twitter.png" alt=""></span>
-                        </a></li>
-                    <li><a href="#">
-                            <span><img src="../assets/img/footer-youtube.png" alt=""></span>
-                        </a></li>
+                    <li>
+                        <a href="#">
+                            <h4>
+                                {{ elemsBottomFooter[0].slogan }}
+                            </h4>
+                        </a>
+                    </li>
+                    <li v-for="curElem in elemsBottomFooter" :key="index">
+                        <a href="#">
+                            <span>
+                                <img :src="getImagePath(curElem.linkImg)" alt="">
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
