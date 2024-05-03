@@ -1,6 +1,32 @@
 <script>
 export default {
 
+    data() {
+        return {
+            elemBlueBand: [
+                {
+                    img: "digital-comics",
+                    title: "DIGITAL COMICS",
+                },
+                {
+                    img: "merchandise",
+                    title: "DC MERCHANDISE",
+                },
+                {
+                    img: "subscriptions",
+                    title: "SUBSCRIPTION",
+                },
+                {
+                    img: "shop-locator",
+                    title: "COMIC SHOP LOCATOR",
+                },
+                {
+                    img: "subscriptions",
+                    title: "DC POWER VISA",
+                }
+            ]
+        }
+    },
 }
 </script>
 
@@ -15,36 +41,15 @@ export default {
         <section class="secondSection">
             <div class="bottomSec">
                 <ul>
-                    <li><a href="#">
+                    <li v-for="elem in elemBlueBand" :key="index"><a href="#">
                             <span>
-                                <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+                                <img src="`../assets/img/buy-comics-digital-comics.png`" alt="">
                             </span>
-                            <p>DIGITAL COMICS</p>
-                        </a></li>
-                    <li><a href="#">
-                            <span>
-                                <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                            </span>
-                            <p>DC MERCHANDISE</p>
-                        </a></li>
-                    <li><a href="#">
-                            <span>
-                                <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-                            </span>
-                            <p>SUBSCRIPTION</p>
-                        </a></li>
-                    <li><a href="#">
-                            <span>
-                                <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-                            </span>
-                            <p>COMIC SHOP LOCATOR</p>
-                        </a></li>
-                    <li><a href="#">
-                            <span>
-                                <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                            </span>
-                            <p>DC POWER VISA</p>
-                        </a></li>
+                            <p>
+                                {{ elem.title }}
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -110,4 +115,5 @@ main {
             }
         }
     }
-}</style>
+}
+</style>

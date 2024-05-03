@@ -1,6 +1,143 @@
+
+<!-- !DA UNSERIRE L'IMMAGINE DEL CONTENITORE DINAMICAMENTE (LEFT) && footer bottom -->
+
+
+
+
 <script>
 export default {
 
+    data() {
+        return {
+            firstFooterElems: [
+                {
+                    linkTitle: "DC COMICS",
+                    link: "#"
+                },
+                {
+                    linktxt: "Characters",
+                    link: "#"
+                },
+                {
+                    linktxt: "Comics",
+                    link: "#"
+                },
+                {
+                    linktxt: "Movies",
+                    link: "#"
+                },
+                {
+                    linktxt: "TV",
+                    link: "#"
+                },
+                {
+                    linktxt: "Gamnes",
+                    link: "#"
+                },
+                {
+                    linktxt: "Videos",
+                    link: "#"
+                },
+                {
+                    linktxt: "News",
+                    link: "#"
+                },
+            ],
+            SecondFooterElems: [
+                {
+                    linkTitle: "SHOP",
+                    link: "#"
+                },
+                {
+                    linktxt: "Shop DC",
+                    link: "#"
+                },
+                {
+                    linktxt: "Shop DC Collection",
+                    link: "#"
+                },
+            ],
+            ThirdFooterElems: [
+                {
+                    linkTitle: "DC",
+                    link: "#"
+                },
+                {
+                    linktxt: "Terms Of Use",
+                    link: "#"
+                },
+                {
+                    linktxt: "Privacy Policy (New)",
+                    link: "#"
+                },
+                {
+                    linktxt: "Ad Choises",
+                    link: "#"
+                },
+                {
+                    linktxt: "Advertising",
+                    link: "#"
+                },
+                {
+                    linktxt: "Jobs",
+                    link: "#"
+                },
+                {
+                    linktxt: "Subscriptions",
+                    link: "#"
+                },
+                {
+                    linktxt: "Talent Workshops",
+                    link: "#"
+                },
+                {
+                    linktxt: "CPSC Certificates",
+                    link: "#"
+                },
+                {
+                    linktxt: "Ratings",
+                    link: "#"
+                },
+                {
+                    linktxt: "Shop Help",
+                    link: "#"
+                },
+                {
+                    linktxt: "Contact Us",
+                    link: "#"
+                },
+            ],
+            fourthFooterElems: [
+                {
+                    linkTitle: "SITES",
+                    link: "#"
+                },
+                {
+                    linktxt: "DC",
+                    link: "#"
+                },
+                {
+                    linktxt: "MAD Magazine",
+                    link: "#"
+                },
+                {
+                    linktxt: "DC Kids",
+                    link: "#"
+                },
+                {
+                    linktxt: "DC Universe",
+                    link: "#"
+                },
+                {
+                    linktxt: "DC Power Visa",
+                    link: "#"
+                },
+            ],
+        }
+    },
+    methods: {
+
+    }
 }
 </script>
 
@@ -15,51 +152,53 @@ export default {
             <div class="firtInnerCont">
                 <ul>
                     <li>
-                        <h4>DC COMICS</h4>
+                        <h4>
+                            {{ firstFooterElems[0].linkTitle }}
+                        </h4>
                     </li>
-
-                    <li><a href="#">Characters</a></li>
-                    <li><a href="#">Comics</a></li>
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">TV</a></li>
-                    <li><a href="#">Gamnes</a></li>
-                    <li><a href="#">Videos</a></li>
-                    <li><a href="#">News</a></li>
+                    <li v-for="Elem in firstFooterElems" :key="index">
+                        <a :href="Elem.link">
+                            {{ Elem.linktxt }}
+                        </a>
+                    </li>
                 </ul>
                 <ul>
                     <li>
-                        <h4>SHOP</h4>
+                        <h4>
+                            {{ SecondFooterElems[0].linkTitle }}
+                        </h4>
                     </li>
-
-                    <li><a href="#">Shop DC</a></li>
-                    <li><a href="#">Shop DC Collection</a></li>
+                    <li v-for="Elem in SecondFooterElems" :key="index">
+                        <a :href="Elem.link">
+                            {{ Elem.linktxt }}
+                        </a>
+                    </li>
                 </ul>
                 <ul>
                     <li>
-                        <h4>DC</h4>
+                        <h4>
+                            {{ ThirdFooterElems[0].linkTitle }}
+                        </h4>
                     </li>
-
-                    <li><a href="#">Terms Of Use</a></li>
-                    <li><a href="#">Privacy Policy (New)</a></li>
-                    <li><a href="#">Ad Choises</a></li>
-                    <li><a href="#">Advertising</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Subscriptions</a></li>
-                    <li><a href="#">Talent Workshops</a></li>
-                    <li><a href="#">CPSC Certificates</a></li>
-                    <li><a href="#">Ratings</a></li>
-                    <li><a href="#">Shop Help</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li v-for="Elem in ThirdFooterElems" :key="index">
+                        <a :href="Elem.link">
+                            {{ Elem.linktxt }}
+                        </a>
+                    </li>
                 </ul>
                 <ul>
                     <li>
-                        <h4>SITES</h4>
+                        <h4>{{ fourthFooterElems[0].linkTitle }}</h4>
                     </li>
-                    <li><a href="#">DC</a></li>
-                    <li><a href="#">MAD Magazine</a></li>
+                    <li v-for="Elem in fourthFooterElems" :key="index">
+                        <a :href="Elem.link">
+                            {{ Elem.linktxt }}
+                        </a>
+                    </li>
+                    <!-- <li><a href="#">MAD Magazine</a></li>
                     <li><a href="#">DC Kids</a></li>
                     <li><a href="#">DC Universe</a></li>
-                    <li><a href="#">DC Power Visa</a></li>
+                    <li><a href="#">DC Power Visa</a></li> -->
 
                 </ul>
 
@@ -72,7 +211,7 @@ export default {
         <div class="footerBottom">
             <div class="innerFooterBottom">
                 <span>
-                    <button>SIGN-UP NOW!</button>
+                    <a href="#">SIGN-UP NOW!</a>
                 </span>
                 <ul>
                     <li><a href="#">
@@ -122,6 +261,7 @@ section {
             height: 45vh;
             object-fit: cover;
             overflow: hidden;
+
             .bg_animation {
                 width: 100%;
 
@@ -162,8 +302,6 @@ section {
             }
         }
 
-
-
         .firtInnerCont {
             @include flex(column, flex-start, flex-start);
             flex-wrap: wrap;
@@ -172,12 +310,12 @@ section {
 
             ul {
                 list-style-type: none;
-                padding: 1.5rem;
+                padding: 2vw;
 
                 li {
                     h4 {
                         color: white;
-                        padding-bottom: 1rem;
+                        padding-bottom: 1.5vw;
                         font-size: 1vw;
                     }
 
@@ -208,7 +346,7 @@ section {
 
     .footerBottom {
         width: 100%;
-        padding: 2rem;
+        padding: 2vw;
         background-color: $color_dark;
 
         .innerFooterBottom {
@@ -219,11 +357,13 @@ section {
 
 
             span {
-                button {
+                a {
                     background-color: transparent;
                     border: 1.5px solid $color_lightBlue;
                     padding: 1vw 1.5vw;
-                    color: white
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.4vw
                 }
             }
 
@@ -239,13 +379,13 @@ section {
                         h4 {
                             padding: 0 2vw;
                             color: $color_lightBlue;
-                            font-size: 1.5vw;
+                            font-size: 1.4vw;
                         }
 
                         span {
                             display: inline-block;
-                            width: 40px;
-                            height: 40px;
+                            width: 4vw;
+                            height: 4vw;
                             background-color: transparent;
 
                             img {

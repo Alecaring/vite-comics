@@ -1,31 +1,77 @@
 <script>
 export default {
 
+    data() {
+        return {
+            navElems: [
+                {
+                    linkName: "CHARACTERS",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "COMICS",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "MOVIES",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "TV",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "GAMES",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "COLLECTIBLES",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "VIDEOS",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "FANS",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "NEWS",
+                    linkDir: "#",
+                },
+                {
+                    linkName: "SHOP",
+                    linkDir: "#",
+                }
+            ]
+        }
+        methods: {
+
+        }
+    },
+
 }
+
 </script>
 
 <template>
     <header>
-        
 
-            <div class="firstCont">
-                <img src="../assets/img/dc-logo.png" alt="">
-            </div>
-            <div class="SecondContainer">
-                <ul>
-                    <li><a href="#">CHARACTERS</a></li>
-                    <li><a href="#">COMICS</a></li>
-                    <li><a href="#">MOVIES</a></li>
-                    <li><a href="#">TV</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a href="#">COLLECTIBLES</a></li>
-                    <li><a href="#">VIDEOS</a></li>
-                    <li><a href="#">FANS</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">SHOP</a></li>
-                </ul>
-            </div>
-        
+
+        <div class="firstCont">
+            <img src="../assets/img/dc-logo.png" alt="">
+        </div>
+        <div class="SecondContainer">
+            <ul>
+                <li v-for="Elem in navElems" :key="index">
+                    <a :href="Elem.linkDir">
+                        {{ Elem.linkName }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     </header>
 </template>
 
@@ -40,17 +86,21 @@ header {
     margin: 0 auto;
     @include flex(row, space-between, center);
     padding: 2rem 0;
+
     .firstCont {
         img {
             width: 5vw;
         }
     }
+
     .SecondContainer {
         ul {
-            @include flex(row, flex-end, center);
+            @include flex(row, center, center);
             list-style-type: none;
             gap: 2vw;
+
             li {
+
                 a {
                     font-size: .9vw;
                     text-decoration: none;
