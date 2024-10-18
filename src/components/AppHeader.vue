@@ -59,17 +59,19 @@ export default {
 
 <template>
     <header>
-        <div class="firstCont">
-            <img :src="getImagePath(logo)" alt="">
-        </div>
-        <div class="SecondContainer">
-            <ul>
-                <li v-for="Elem in navElems" :key="index">
-                    <a :href="Elem.linkDir">
-                        {{ Elem.linkName }}
-                    </a>
-                </li>
-            </ul>
+        <div>
+            <div class="firstCont">
+                <img :src="getImagePath(logo)" alt="">
+            </div>
+            <div class="SecondContainer">
+                <ul>
+                    <li v-for="Elem in navElems" :key="index">
+                        <a :href="Elem.linkDir">
+                            {{ Elem.linkName }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </header>
@@ -82,33 +84,52 @@ export default {
 
 header {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    @include flex(row, space-between, center);
-    padding: 2rem 0;
+    height: 15vh;
+    background-color: #fff;
+    
 
-    .firstCont {
-        img {
-            width: 5vw;
+    div {
+
+        margin: 0 auto;
+        @include flex(row, space-between, center);
+        max-width: 1200px;
+        height: 15vh;
+        background-color: #fff;
+
+        .firstCont {
+            img {
+                width: 5vw;
+            }
         }
-    }
 
-    .SecondContainer {
-        ul {
-            @include flex(row, center, center);
-            list-style-type: none;
-            gap: 2vw;
+        .SecondContainer {
+            ul {
+                @include flex(row, center, center);
+                list-style-type: none;
+                
 
-            li {
+                li {
+                    padding: 0 1.2vw;
+                    line-height: 14.3vh;
+                    
+                    &:hover {
 
-                a {
-                    font-size: .9vw;
-                    text-decoration: none;
-                    color: inherit;
+                        border-bottom: 5px solid $color_lightBlue;
+                        transition: ease-in .2s;
+                        
+                        
+                    }
+                    a {
+                        font-size: .9vw;
+                        text-decoration: none;
+                        color: inherit;
+                        
 
+
+                    }
                 }
             }
         }
     }
-}
-</style>
+
+}</style>

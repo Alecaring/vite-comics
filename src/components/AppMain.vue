@@ -1,6 +1,8 @@
 <script>
-export default {
+import AppSliderBanner from './AppSliderBanner.vue';
+import AppGridSelection from './AppGridSelection.vue'
 
+export default {
     data() {
         return {
             elemBlueBand: [
@@ -25,23 +27,31 @@ export default {
                     link: "#",
                 },
                 {
-                    img: "buy-dc-power-visa",
+                    img: "buy-comics-merchandise",
                     title: "DC POWER VISA",
                     link: "#",
                 }
             ]
-        }
+        };
     },
     methods: {
         getImagePath(img) {
             return new URL(`../assets/img/${img}.png`, import.meta.url).href;
         }
-    }
+    },
+    components: {
+         AppSliderBanner, 
+         AppGridSelection 
+        }
 }
 </script>
 
 <template>
     <main>
+        <section>
+            <AppSliderBanner />
+            <AppGridSelection />
+        </section>
         <section class="firstSection">
             <span class="content">
                 <h1> -- content goes here -- </h1>
@@ -98,7 +108,7 @@ main {
 
         .bottomSec {
             margin: 0 auto;
-            padding: 4vw;
+            padding: 3vw;
             max-width: 1000px;
 
             ul {
@@ -111,6 +121,11 @@ main {
                         gap: 1vw;
                         text-decoration: none;
                         color: white;
+
+                        &:hover {
+                            color: rgb(255, 192, 84);
+                            transition: ease-in-out .3s;
+                        }
 
                         span {
                             img {

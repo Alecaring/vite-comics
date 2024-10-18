@@ -128,11 +128,8 @@ export default {
                 },
             ],
             imgBgBig: "dc-logo-bg",
+            slogan: "FOLLOW US",
             elemsBottomFooter: [
-                {
-                    slogan: "FOLLOW US",
-                    link: "#",
-                },
                 {
                     link: "#",
                     linkImg: "footer-facebook",
@@ -218,11 +215,6 @@ export default {
                             {{ Elem.linktxt }}
                         </a>
                     </li>
-                    <!-- <li><a href="#">MAD Magazine</a></li>
-                    <li><a href="#">DC Kids</a></li>
-                    <li><a href="#">DC Universe</a></li>
-                    <li><a href="#">DC Power Visa</a></li> -->
-
                 </ul>
 
             </div>
@@ -240,7 +232,7 @@ export default {
                     <li>
                         <a href="#">
                             <h4>
-                                {{ elemsBottomFooter[0].slogan }}
+                                {{ slogan }}
                             </h4>
                         </a>
                     </li>
@@ -338,10 +330,16 @@ section {
                         font-size: 1vw;
                     }
 
+                
+
                     a {
                         text-decoration: none;
                         color: rgb(181, 163, 163);
                         font-size: .7vw;
+                        &:hover {
+                                color: rgb(255, 192, 84);
+                                transition: ease-in-out .3s;
+                            }
                     }
                 }
             }
@@ -382,9 +380,15 @@ section {
                     padding: 1vw 1.5vw;
                     color: white;
                     text-decoration: none;
-                    font-size: 1.4vw
+                    font-size: 1.3vw;
+
+                    &:hover {
+                        border: 2px solid white;
+                        color: $color_lightBlue; 
+                    }
                 }
             }
+
 
             ul {
                 @include flex(row, center, center);
@@ -396,16 +400,25 @@ section {
                         text-decoration: none;
 
                         h4 {
-                            padding: 0 2vw;
                             color: $color_lightBlue;
-                            font-size: 1.4vw;
+                            font-size: 1.3vw;
+
+                            &:hover {
+                                color: wheat;
+                            }
                         }
 
                         span {
                             display: inline-block;
-                            width: 4vw;
-                            height: 4vw;
+                            width: 3vw;
+                            height: 3vw;
                             background-color: transparent;
+                            border-radius: 50%;
+
+                            &:hover {
+                                background-color: rgb(255, 192, 84);
+                                transition: ease-in-out .3s;
+                            }
 
                             img {
                                 object-fit: cover;
